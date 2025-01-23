@@ -20,4 +20,16 @@ function adicionarAmigo() {
 
 function adicionarNaLista(nome) { 
     listaAmigos.push(nome);
+    listarAmigos(listaAmigos);
+}
+
+function listarAmigos(listaAmigos) {
+    let lista = document.getElementById("listaAmigos");
+    lista.innerHTML = "";
+
+    listaAmigos.forEach((amigo) => {
+        let item = document.createElement("li");
+        item.textContent = amigo;
+        lista.appendChild(item);
+    });
 }
